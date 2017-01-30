@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <title>Glossary</title>
+    <center>
+         <font color=Green>Go to:</font> 
+         <script language=JavaScript>
+           <!--
+             document.write(ALPHABET())
+           //-->
+         </script>
+       </center> 
+<style type="text/css">
+    .box{
+        padding: 20px;
+        display: none;
+        margin-top: 20px;
+        border: 1px solid #000;
+    }
+    .labelLink{ background: #85db99; }
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $('input[select id="myselect" onchange="change_myselect(this.value)"').click(function(){
+            if($(this).attr("value")=="labelLink"){
+                $(".labelLink").click();
+            }
+        }
+    });
+});
+    </script>
+    </head>
+    <body>
+script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+function ajaxGetJson() {
+var hr = new XMLHttpRequest();
+hr.open("GET", "http://www.filehosting.org/file/details/637635/data.json", true);
+hr.setRequestHeader("Content-type", "application/json", true);
+hr.onreadystatechange = function() {
+    if (hr.readyState == 4 && hr.status == 200) {
+        var data = JSON.parse(hr.responseText);
+        formatToTable(data);
+    }
+}
+hr.send(null);
+}
+
+function formatToTable(var data){
+    var thisElement = document.getElementById('mytablecontainer');
+    thisElement.innerHTML = "<table>";
+
+    for (var x =0; x <len(data); x++){
+        thisElement.innerHTML = thisElement.innerHTML + "<tr><td><h2 id="headline2">" + data[x].glossary + "</h2></td></tr>";
+        for (var y =0; y <len(data; y++))
+            thisElement.innerHTML = this.Element.innerHTML + "<tr><td><p>" + data[y].definition + "</p></td></tr>;
+            for (var z =0; z <len(data; z++))
+                thisElement.innerHTML = this.Element.innerHTML + "<tr><td><li id="labelLink">" + data[y].label + "</li></td></tr>;
+                for (var t =0; t <len(data; t++))
+                    thisElement.innerHTML = this.Element.innerHTML + "<tr><td><li id="seeAlsoLink">" + data[y].[see-also] + "</li></td></tr>;
+                    $("#myHref").on('click', function(event) {
+                    event.preventDefault();
+                    document.getElementById(".mytablecontainer").style.flexGrow = "5";
+                    window.location = "glossary";
+});
+    thisElement.innerHTML = thisElement.innerHTML + "</table>";
+ }
+ </script>
+ </body>
